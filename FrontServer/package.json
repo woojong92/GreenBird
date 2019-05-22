@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next", 
-    "build" : "next build",
-    "start" : "next start"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -19,11 +19,12 @@
   },
   "homepage": "https://github.com/woojong92/GreenBird#readme",
   "dependencies": {
+    "antd": "^3.18.2",
     "next": "^8.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "devDependencies" : {
+  "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-react": "^7.13.0",
