@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'; {/*useCallback을 사용하여 이벤트 리스너들을 감싸준다.*/}
 import { Form, Input, Checkbox,  Button} from 'antd';
+import PropTyes from 'prop-types';
 
 const Signup = () => {
     /* 모든 Input에 스테이트와 이벤트 리스너를 만들어 줘야 한다. */
@@ -69,10 +70,6 @@ const Signup = () => {
         setTermError(false);
         setTerm(e.target.checked);
     }, []);
-
-
-
-    
 
     return (
         <>

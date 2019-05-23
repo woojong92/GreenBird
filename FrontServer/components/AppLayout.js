@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Menu, Input, Button } from 'antd';
+import PropTypes from 'prop-types';
 
 const AppLayout = ( {children} ) => {
     return (
@@ -16,6 +17,10 @@ const AppLayout = ( {children} ) => {
             {children}
         </div>
     );
+};
+
+AppLayout.propTypes ={
+    children: PropTypes.node, //렌더링 할 수 있는 것들은 node타입
 };
 
 export default AppLayout;
