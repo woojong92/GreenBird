@@ -2,6 +2,15 @@ import React, { useState, useCallback } from 'react'; {/*useCallback을 사용�
 import { Form, Input, Checkbox,  Button} from 'antd';
 import PropTyes from 'prop-types';
 
+// 커스텀 hook => 반복되는 것을 줄일 수 있는 방법:) => 나중에 정리!!
+export const useInput = (initValue = null) =>  {
+    const [value, setter] = useState(initValue);
+    const handler = useCallback((e) => {  // !! props로 넘겨주는 함수는 useCallback 필수
+        setter(e.target.value);
+    }, []);
+    return [value, handler];
+};
+
 const Signup = () => {
     /* 모든 Input에 스테이트와 이벤트 리스너를 만들어 줘야 한다. */
     /*
@@ -15,14 +24,7 @@ const Signup = () => {
     const [termError, setTermError] = useState(false);
 
 
-    // 커스텀 hook => 반복되는 것을 줄일 수 있는 방법:) => 나중에 정리!!
-    const useInput = (initValue = null) =>  {
-        const [value, setter] = useState(initValue);
-        const handler = useCallback((e) => {  // !! props로 넘겨주는 함수는 useCallback 필수
-            setter(e.target.value);
-        }, []);
-        return [value, handler];
-    };
+
 
     const [id, onChangeId] =useInput('');
     const [nickname, onChangeNickname] = useInput('');
