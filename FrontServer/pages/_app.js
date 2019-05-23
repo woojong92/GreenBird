@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import AppLayout from '../components/AppLayout';
-import PropTypes from 'prrop-types';
+import PropTypes from 'prop-types';
 
 const GreenBird = ( {Component }) => {
     return (
@@ -18,7 +18,7 @@ const GreenBird = ( {Component }) => {
     );
 };
 
-GreenBird.PropTypes = {
+GreenBird.propTypes = {
     Components: PropTypes.elementType,
 };
 
