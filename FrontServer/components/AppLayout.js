@@ -21,13 +21,12 @@ const AppLayout = ( {children} ) => {
                 <Menu.Item key="mail">
                     <Input.Search enterButton style = {{verticalAlign: 'middle'}} />
                 </Menu.Item>
-                <Link href = "/signup"><a><Button>회원가입</Button></a></Link>
             </Menu>
-            <Row>
-                <Col xs={24} md={6}>첫번째
+            <Row gutter = {8}>
+                <Col xs={24} md={6}>
                     {dummy.isLoggedIn 
                         ?   
-                        <Card
+                        <Card 
                             actions = {[
                                 <div key="twit">짹<br />{dummy.Post.length}</div>,
                                 <div key="following">팔로워<br />{dummy.Followings.length}</div>,
@@ -43,10 +42,12 @@ const AppLayout = ( {children} ) => {
                         <LoginForm />
                     }
                 </Col>
-                <Col xs={24} md={12}>두번재</Col>
+                <Col xs={24} md={12}>
+                    {children}
+                </Col>
                 <Col xs={24} md={6}>세번째</Col>
             </Row>
-            {children}
+            
         </div>
     );
 };
