@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'; {/*useCallback을 사용하여 이벤트 리스너들을 감싸준다.*/}
 import { Form, Input, Checkbox,  Button} from 'antd';
-import PropTyes from 'prop-types';
+import PropTypes from 'prop-types';
 
 
     // 커스텀 hook => 반복되는 것을 줄일 수 있는 방법:) => 나중에 정리!!
