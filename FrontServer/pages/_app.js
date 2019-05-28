@@ -3,7 +3,7 @@ import Head from 'next/head';
 import AppLayout from '../components/AppLayout';
 import PropTypes from 'prop-types';
 
-import { createStore} from 'redux';
+import { createStore, compose, applyMiddleware} from 'redux';
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux'; // Provider가 리액트 컴포넌트들의 중앙통제실 리덕스 스테이트를 제공
 import reducer from '../reducers';
@@ -29,10 +29,17 @@ GreenBird.propTypes = {
     store : PropTypes.object,
 };
 
-// 
+// 틀 자체는 이대로 유지!
 export default withRedux((initialState, option) => {
-    const store = createStore(reducer, initialState);
-    // 여기에다가 store 커스텀마이징
+    const middlewares = []; // 이 부분만 바뀜
+
+    const enhancer = compose(
+        applyMiddleware(...middlewares),
+        typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f,
+    );
+
+    const store = createStore(reducer, initialState, enhancer);
+
     return store;
 })(GreenBird); // 기존 컴포넌트의 기능을 확장!
 

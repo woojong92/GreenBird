@@ -10,7 +10,7 @@ const LOG_OUT = "LOG_OUT";
 
 const loginAction = { // 실제 액션
     type : LOG_IN,
-    DATA: {
+    data: {
         nickname: '제로초',
     },
 };
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
      case logoutAction : {
          return {
              ...state,
-             isLoggedIn :false,
+             isLoggedIn : false,
              user: null,
          }
      }
