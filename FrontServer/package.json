@@ -20,7 +20,7 @@
   "homepage": "https://github.com/woojong92/GreenBird#readme",
   "dependencies": {
     "antd": "^3.18.2",
-    "next": "^8.1.0",
+    "next": "^13.0.3",
     "next-redux-wrapper": "^3.0.0-alpha.2",
     "npm": "^6.9.0",
     "prop-types": "^15.7.2",
